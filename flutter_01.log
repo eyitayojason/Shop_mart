@@ -1,0 +1,86 @@
+Flutter crash report; please file at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter packages get
+
+## exception
+
+YamlException: Error on line 62, column 5: Expected a key while parsing a block mapping.
+   ╷
+62 │     - assets/images/perfume.jpg
+   │     ^
+   ╵
+
+```
+#0      Parser._parseBlockMappingKey (package:yaml/src/parser.dart:441:5)
+#1      Parser._stateMachine (package:yaml/src/parser.dart:86:16)
+#2      Parser.parse (package:yaml/src/parser.dart:47:19)
+#3      Loader._loadMapping (package:yaml/src/loader.dart:169:23)
+#4      Loader._loadNode (package:yaml/src/loader.dart:86:16)
+#5      Loader._loadMapping (package:yaml/src/loader.dart:163:19)
+#6      Loader._loadNode (package:yaml/src/loader.dart:86:16)
+#7      Loader._loadDocument (package:yaml/src/loader.dart:62:20)
+#8      Loader.load (package:yaml/src/loader.dart:54:20)
+#9      loadYamlDocument (package:yaml/yaml.dart:51:25)
+#10     loadYamlNode (package:yaml/yaml.dart:42:5)
+#11     loadYaml (package:yaml/yaml.dart:34:5)
+#12     _pluginFromPubspec (package:flutter_tools/src/plugins.dart:271:27)
+#13     findPlugins.<anonymous closure> (package:flutter_tools/src/plugins.dart:305:27)
+#14     _LinkedHashMapMixin.forEach (dart:collection-patch/compact_hash.dart:379:8)
+#15     findPlugins (package:flutter_tools/src/plugins.dart:303:12)
+#16     refreshPluginsList (package:flutter_tools/src/plugins.dart:783:32)
+#17     FlutterProject.ensureReadyForPlatformSpecificTooling (package:flutter_tools/src/project.dart:208:5)
+#18     PackagesGetCommand.runCommand (package:flutter_tools/src/commands/packages.dart:130:23)
+<asynchronous suspension>
+#19     FlutterCommand.verifyThenRunCommand (package:flutter_tools/src/runner/flutter_command.dart:615:18)
+#20     _asyncThenWrapperHelper.<anonymous closure> (dart:async-patch/async_patch.dart:73:64)
+#21     _rootRunUnary (dart:async/zone.dart:1134:38)
+#22     _CustomZone.runUnary (dart:async/zone.dart:1031:19)
+#23     _FutureListener.handleValue (dart:async/future_impl.dart:139:18)
+#24     Future._propagateToListeners.handleValueCallback (dart:async/future_impl.dart:680:45)
+#25     Future._propagateToListeners (dart:async/future_impl.dart:709:32)
+#26     Future._completeWithValue (dart:async/future_impl.dart:524:5)
+#27     Future._asyncComplete.<anonymous closure> (dart:async/future_impl.dart:554:7)
+#28     _rootRun (dart:async/zone.dart:1126:13)
+#29     _CustomZone.run (dart:async/zone.dart:1023:19)
+#30     _CustomZone.runGuarded (dart:async/zone.dart:925:7)
+#31     _CustomZone.bindCallbackGuarded.<anonymous closure> (dart:async/zone.dart:965:23)
+#32     _microtaskLoop (dart:async/schedule_microtask.dart:43:21)
+#33     _startMicrotaskLoop (dart:async/schedule_microtask.dart:52:5)
+#34     _runPendingImmediateCallback (dart:isolate-patch/isolate_patch.dart:118:13)
+#35     _RawReceivePortImpl._handleMessage (dart:isolate-patch/isolate_patch.dart:175:5)
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, v1.12.13+hotfix.7, on Microsoft Windows [Version 10.0.18363.592], locale en-NG)
+    • Flutter version 1.12.13+hotfix.7 at C:\Users\Jason\flutter
+    • Framework revision 9f5ff2306b (2 weeks ago), 2020-01-26 22:38:26 -0800
+    • Engine revision a67792536c
+    • Dart version 2.7.0
+
+[✓] Android toolchain - develop for Android devices (Android SDK version 29.0.2)
+    • Android SDK at C:\Users\Jason\AppData\Local\Android\sdk
+    • Android NDK location not configured (optional; useful for native profiling support)
+    • Platform android-29, build-tools 29.0.2
+    • Java binary at: C:\Program Files\Android\Android Studio\jre\bin\java
+    • Java version OpenJDK Runtime Environment (build 1.8.0_202-release-1483-b03)
+    • All Android licenses accepted.
+
+[✓] Android Studio (version 3.5)
+    • Android Studio at C:\Program Files\Android\Android Studio
+    • Flutter plugin version 42.1.1
+    • Dart plugin version 191.8593
+    • Java version OpenJDK Runtime Environment (build 1.8.0_202-release-1483-b03)
+
+[✓] VS Code (version 1.42.0)
+    • VS Code at C:\Users\Jason\AppData\Local\Programs\Microsoft VS Code
+    • Flutter extension version 3.8.1
+
+[✓] Connected device (1 available)
+    • SM G935F • 127.0.0.1:21503 • android-x86 • Android 5.1.1 (API 22)
+
+• No issues found!
+```
